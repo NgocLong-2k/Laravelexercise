@@ -15,25 +15,24 @@ class CreateProductsTable extends Migration
     {
         Schema::create('products', function (Blueprint $table) {
             $table->id();
-            $table->string('title')->unique();
-            $table->string('slug');
-            $table->string('description');
-            $table->unsignedInteger('price');
-            $table->unsignedInteger('quantity');
-            $table->text('photo');
-            $table->bigInteger('category_id');
-            $table->unsignedInteger('sale_off')->default(0);
-            $table->string('user_id');
+            $table->string('title',100);
+            $table->string('slug',100)->unique();
+            $table->text('description')->nullable();
+            $table->decimal('price');
+            $table->unsignedBigInteger('quantity')->default(0);
+            $table->string('photo')->nullable();
+            $table->unsignedInteger('category_id');
+            $table->decimal('sale_off')->default(0.0);
+            $table->unsignedBigInteger('user_id');
             $table->softDeletes();
             $table->timestamps();
         });
         Schema::create('categories', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->text('photo');
-            $table->bigInteger('parent_id');
-            $table->string('description');
-
+            $table->string('name',100);
+            $table->string('photo')->nullable();
+            $table->unsignedInteger('parent_id');
+            $table->text('description')->nullable();
         });
     }
 

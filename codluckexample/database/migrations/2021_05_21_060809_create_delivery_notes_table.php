@@ -15,14 +15,22 @@ class CreateDeliveryNotesTable extends Migration
     {
         Schema::create('delivery_notes', function (Blueprint $table) {
             $table->id();
-            $table->date('date_of_delivery_note');
-            $table->bigInteger('customer_id');
-            $table->bigInteger('user_id');
-            $table->string('total');
-            $table->unsignedInteger('delivery_price');
-            $table->string('note')->nullable();
+            $table->dateTime('date_of_delivery_note');
+            $table->unsignedBigInteger('customer_id');
+            $table->unsignedBigInteger('user_id');
+            $table->decimal('total');
+            $table->decimal('delivery_price');
+            $table->text('note')->nullable();
             $table->softDeletes();
             $table->timestamps();
+        });
+        Schema::create('delivery_note_details', function (Blueprint $table) {
+            $table->id();
+            $table->unsignedBigInteger('delivery_note_id');
+            $table->unsignedBigInteger('product_id');
+            $table->unsignedInteger('quantity');
+            $table->decimal('price');
+            $table->float('tax')->default(0.0);
         });
     }
 
@@ -34,5 +42,6 @@ class CreateDeliveryNotesTable extends Migration
     public function down()
     {
         Schema::dropIfExists('delivery_notes');
+        Schema::dropIfExists('delivery_note_details');
     }
 }

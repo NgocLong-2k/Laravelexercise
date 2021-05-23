@@ -18,7 +18,6 @@ class CreateDepartmentsTable extends Migration
             $table->string('name');
             $table->string('manager');
             $table->date('inauguration_day');
-            //$table->timestamps();
         });
     }
 

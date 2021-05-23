@@ -15,13 +15,21 @@ class CreateReceiptsTable extends Migration
     {
         Schema::create('receipts', function (Blueprint $table) {
             $table->id();
-            $table->date('date_of_receipt');
-            $table->bigInteger('supplier_id');
-            $table->bigInteger('user_id');
-            $table->string('total');
-            $table->string('note')->nullable();
+            $table->dateTime('date_of_receipt');
+            $table->unsignedBigInteger('supplier_id');
+            $table->unsignedBigInteger('user_id');
+            $table->decimal('total');
+            $table->text('note')->nullable();
             $table->softDeletes();
             $table->timestamps();
+        });
+        Schema::create('receipt_details', function (Blueprint $table) {
+            $table->id();
+            $table->unsignedBigInteger('receipt_id');
+            $table->unsignedBigInteger('product_id');
+            $table->unsignedInteger('quantity')->default(1);
+            $table->decimal('price');
+            $table->float('tax')->default(0.0);
         });
     }
 
@@ -33,5 +41,6 @@ class CreateReceiptsTable extends Migration
     public function down()
     {
         Schema::dropIfExists('receipts');
+        Schema::dropIfExists('receipt_details');
     }
 }
