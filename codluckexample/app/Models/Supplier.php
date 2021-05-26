@@ -23,4 +23,11 @@ class Supplier extends Model
         'email',
         'description',
     ];
+    /**
+     * Get all of the receipts for the supplier
+     */
+    public function receipts()
+    {
+        return $this->hasMany(Receipt::class);
+    }
 }

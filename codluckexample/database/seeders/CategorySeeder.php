@@ -16,7 +16,8 @@ class CategorySeeder extends Seeder
     {
         DB::table('categories')->truncate();
         Category::factory()
-            ->count(10)
+            ->count(20)
+            ->hasProducts(5)
             ->create();
     }
 }

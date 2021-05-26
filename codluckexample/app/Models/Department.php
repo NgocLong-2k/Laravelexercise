@@ -23,5 +23,12 @@ class Department extends Model
         'name',
         'manager',
         'inauguration_day',
-        ];
+    ];
+    /**
+     * Get all of the users for the department
+     */
+    public function users()
+    {
+        return $this->hasMany(User::class);
+    }
 }

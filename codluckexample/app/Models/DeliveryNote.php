@@ -22,4 +22,25 @@ class DeliveryNote extends Model
         'delivery_price',
         'note',
     ];
+    /**
+     * Get the User for the delivery_note.
+     */
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+    /**
+     * Get the delivery note detail for the delivery note.
+     */
+    public function deliveryNoteDetails()
+    {
+        return $this->hasMany(DeliveryNoteDetail::class);
+    }
+    /**
+     * Get the customer for the delivery_note.
+     */
+    public function customer()
+    {
+        return $this->belongsTo(Customer::class);
+    }
 }

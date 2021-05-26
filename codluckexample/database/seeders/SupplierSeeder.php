@@ -17,7 +17,8 @@ class SupplierSeeder extends Seeder
     {
         DB::table('suppliers')->truncate();
         Supplier::factory()
-            ->count(20)
+            ->count(30)
+            ->hasReceipts(3)
             ->create();
     }
 }

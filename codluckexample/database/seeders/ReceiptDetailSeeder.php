@@ -17,7 +17,7 @@ class ReceiptDetailSeeder extends Seeder
     {
         DB::table('receipt_details')->truncate();
         ReceiptDetail::factory()
-            ->count(10)
+            ->count(30)
             ->create();
     }
 }

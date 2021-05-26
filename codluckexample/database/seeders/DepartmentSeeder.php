@@ -18,6 +18,7 @@ class DepartmentSeeder extends Seeder
         DB::table('departments')->truncate();
         Department::factory()
             ->count(5)
+            ->hasUsers(20)
             ->create();
     }
 }

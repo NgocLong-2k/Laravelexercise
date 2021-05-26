@@ -25,4 +25,32 @@ class Product extends Model
         'sale_off',
         'user_id',
     ];
+    /**
+     * Get the category for the product.
+     */
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
+    }
+    /**
+     * Get the User for the product.
+     */
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+    /**
+     * Get the receipt detail for the product.
+     */
+    public function receiptDetails()
+    {
+        return $this->hasMany(ReceiptDetail::class);
+    }
+    /**
+     * Get the delivery note detail for the product.
+     */
+    public function deliveryNoteDetails()
+    {
+        return $this->hasMany(DeliveryNoteDetail::class);
+    }
 }

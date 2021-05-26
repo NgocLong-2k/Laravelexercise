@@ -26,4 +26,18 @@ class DeliveryNoteDetail extends Model
         'price',
         'tax',
     ];
+    /**
+     * Get the User for the product.
+     */
+    public function product()
+    {
+        return $this->belongsTo(Product::class);
+    }
+    /**
+     * Get the deliveryNoteDetails for the deliveryNote.
+     */
+    public function deliveryNote()
+    {
+        return $this->belongsTo(DeliveryNote::class);
+    }
 }

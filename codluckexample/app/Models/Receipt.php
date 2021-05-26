@@ -21,4 +21,25 @@ class Receipt extends Model
         'total',
         'note',
     ];
+    /**
+     * Get the User for the receipt
+     */
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+    /**
+     * Get the receipt detail for the receipt.
+     */
+    public function receiptDetails()
+    {
+        return $this->hasMany(ReceiptDetail::class);
+    }
+    /**
+     * Get the supplier for the receipt
+     */
+    public function supplier()
+    {
+        return $this->belongsTo(Supplier::class);
+    }
 }

@@ -22,9 +22,11 @@ class ReceiptDetailFactory extends Factory
     public function definition()
     {
         return [
-            'receipt_id'=>1,
-            'product_id'=>1,
-            'price'=>$this->faker->randomDigit(),
+            'receipt_id'=>$this->faker->numberBetween(1,10),
+            'product_id'=>$this->faker->numberBetween(1,10),
+            'quantity'=>$this->faker->numberBetween(1,1000),
+            'price'=>$this->faker->numerify(),
+            'tax'=>$this->faker->numerify(),
         ];
     }
 }

@@ -26,4 +26,18 @@ class ReceiptDetail extends Model
         'price',
         'tax',
     ];
+    /**
+     * Get the receipt for the receipt detail.
+     */
+    public function receipt()
+    {
+        return $this->belongsTo(Receipt::class);
+    }
+    /**
+     * Get the product for the receipt detail.
+     */
+    public function product()
+    {
+        return $this->belongsTo(Product::class);
+    }
 }

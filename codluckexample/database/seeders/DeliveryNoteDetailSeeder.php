@@ -17,7 +17,7 @@ class DeliveryNoteDetailSeeder extends Seeder
     {
         DB::table('delivery_note_details')->truncate();
         DeliveryNoteDetail::factory()
-            ->count(10)
+            ->count(20)
             ->create();
     }
 }

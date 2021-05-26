@@ -18,6 +18,7 @@ class CustomerSeeder extends Seeder
         DB::table('customers')->truncate();
         Customer::factory()
             ->count(50)
+            ->hasDeliveryNotes(3)
             ->create();
     }
 }

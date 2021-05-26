@@ -24,4 +24,11 @@ class Customer extends Model
         'customer_type',
         'description',
     ];
+    /**
+     * Get all of the delivery notes for the customer
+     */
+    public function deliveryNotes()
+    {
+        return $this->hasMany(DeliveryNote::class);
+    }
 }

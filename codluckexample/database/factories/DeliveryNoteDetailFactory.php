@@ -22,10 +22,11 @@ class DeliveryNoteDetailFactory extends Factory
     public function definition()
     {
         return [
-            'delivery_note_id'=>1,
-            'product_id'=>1,
-            'quantity'=>1,
-            'price'=>$this->faker->randomDigit(),
+            'delivery_note_id'=>$this->faker->numberBetween(1,10),
+            'product_id'=>$this->faker->numberBetween(1,10),
+            'quantity'=>$this->faker->numberBetween(1,1000),
+            'price'=>$this->faker->numerify(),
+            'tax'=>$this->faker->numerify(),
         ];
     }
 }

@@ -4,6 +4,7 @@ namespace Database\Factories;
 
 use App\Models\Product;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Support\Str;
 
 class ProductFactory extends Factory
 {
@@ -23,10 +24,11 @@ class ProductFactory extends Factory
     {
         return [
             'title'=>$this->faker->text(100),
-            'slug'=>$this->faker->text(100),
-            'price'=>$this->faker->randomDigit(),
-            'category_id'=>1,
-            'user_id'=>1,
+            'slug'=>Str::slug($this->faker->unique()->text(100)),
+            'price'=>$this->faker->numerify(),
+            'quantity'=>$this->faker->numberBetween(1,1000),
+            'sale_off'=>$this->faker->numerify(),
+            'user_id'=>$this->faker->numberBetween(1,10),
         ];
     }
 }

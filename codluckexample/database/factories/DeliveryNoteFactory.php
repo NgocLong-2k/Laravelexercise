@@ -23,10 +23,9 @@ class DeliveryNoteFactory extends Factory
     {
         return [
             'date_of_delivery_note'=>$this->faker->dateTime(),
-            'customer_id'=>1,
-            'user_id'=>1,
-            'total'=>$this->faker->randomDigit(),
-            'delivery_price'=>$this->faker->randomDigit(),
+            'user_id'=>$this->faker->numberBetween(1,10),
+            'total'=>$this->faker->numberBetween(1,1000000),
+            'delivery_price'=>$this->faker->numerify(),
         ];
     }
 }
