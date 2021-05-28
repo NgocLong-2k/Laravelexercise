@@ -8,13 +8,9 @@
         <!--  Catagories  -->
         <div class="catagories-menu">
             <ul>
-                <li class="active"><a href="#">Chairs</a></li>
-                <li><a href="#">Beds</a></li>
-                <li><a href="#">Accesories</a></li>
-                <li><a href="#">Furniture</a></li>
-                <li><a href="#">Home Deco</a></li>
-                <li><a href="#">Dressings</a></li>
-                <li><a href="#">Tables</a></li>
+                @foreach($categories as $category)
+                    <li @if($id == $category->id) class="active" @endif><a href="{{route('product.index', $category->id)}}">{{$category->name}}</a></li>
+                @endforeach
             </ul>
         </div>
     </div>

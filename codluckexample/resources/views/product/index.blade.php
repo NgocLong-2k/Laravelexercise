@@ -75,7 +75,7 @@
                             <i class="fa fa-star" aria-hidden="true"></i>
                         </div>
                         <div class="cart">
-                            <a href="cart.html" data-toggle="tooltip" data-placement="left" title="Add to Cart"><img src="{{ asset('/assets/img/core-img/cart.png') }}" alt=""></a>
+                            <a href="{{route('shopping.cart')}}" data-toggle="tooltip" data-placement="left" title="Add to Cart"><img src="{{ asset('/assets/img/core-img/cart.png') }}" alt=""></a>
                         </div>
                     </div>
                 </div>
@@ -112,7 +112,7 @@
                             <i class="fa fa-star" aria-hidden="true"></i>
                         </div>
                         <div class="cart">
-                            <a href="cart.html" data-toggle="tooltip" data-placement="left" title="Add to Cart"><img src="{{ asset('/assets/img/core-img/cart.png') }}" alt=""></a>
+                            <a href="{{route('shopping.cart')}}" data-toggle="tooltip" data-placement="left" title="Add to Cart"><img src="{{ asset('/assets/img/core-img/cart.png') }}" alt=""></a>
                         </div>
                     </div>
                 </div>
@@ -149,7 +149,7 @@
                             <i class="fa fa-star" aria-hidden="true"></i>
                         </div>
                         <div class="cart">
-                            <a href="cart.html" data-toggle="tooltip" data-placement="left" title="Add to Cart"><img src="{{ asset('/assets/img/core-img/cart.png') }}" alt=""></a>
+                            <a href="{{route('shopping.cart')}}" data-toggle="tooltip" data-placement="left" title="Add to Cart"><img src="{{ asset('/assets/img/core-img/cart.png') }}" alt=""></a>
                         </div>
                     </div>
                 </div>
@@ -186,7 +186,7 @@
                             <i class="fa fa-star" aria-hidden="true"></i>
                         </div>
                         <div class="cart">
-                            <a href="cart.html" data-toggle="tooltip" data-placement="left" title="Add to Cart"><img src="{{ asset('/assets/img/core-img/cart.png') }}" alt=""></a>
+                            <a href="{{route('shopping.cart')}}" data-toggle="tooltip" data-placement="left" title="Add to Cart"><img src="{{ asset('/assets/img/core-img/cart.png') }}" alt=""></a>
                         </div>
                     </div>
                 </div>
@@ -223,7 +223,7 @@
                             <i class="fa fa-star" aria-hidden="true"></i>
                         </div>
                         <div class="cart">
-                            <a href="cart.html" data-toggle="tooltip" data-placement="left" title="Add to Cart"><img src="{{ asset('/assets/img/core-img/cart.png') }}" alt=""></a>
+                            <a href="{{route('shopping.cart')}}" data-toggle="tooltip" data-placement="left" title="Add to Cart"><img src="{{ asset('/assets/img/core-img/cart.png') }}" alt=""></a>
                         </div>
                     </div>
                 </div>
@@ -260,7 +260,7 @@
                             <i class="fa fa-star" aria-hidden="true"></i>
                         </div>
                         <div class="cart">
-                            <a href="cart.html" data-toggle="tooltip" data-placement="left" title="Add to Cart"><img src="{{ asset('/assets/img/core-img/cart.png') }}" alt=""></a>
+                            <a href="{{route('shopping.cart')}}" data-toggle="tooltip" data-placement="left" title="Add to Cart"><img src="{{ asset('/assets/img/core-img/cart.png') }}" alt=""></a>
                         </div>
                     </div>
                 </div>

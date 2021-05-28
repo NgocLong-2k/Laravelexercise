@@ -22,8 +22,9 @@ class CategoryFactory extends Factory
     public function definition()
     {
         return [
-            'name'=>$this->faker->text(100),
+            'name'=>$this->faker->text(25),
             'parent_id'=>1,
+            'min_price'=>$this->faker->numerify(),
         ];
     }
 }

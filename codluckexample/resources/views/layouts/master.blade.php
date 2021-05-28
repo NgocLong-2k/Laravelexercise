@@ -9,7 +9,7 @@
     <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
     <!-- Title  -->
-    <title>My store - Furniture Ecommerce | @yield('title')</title>
+    <title>My store - Furniture | @yield('title')</title>
 
     <!-- Favicon  -->
     <link rel="icon" href="{{ asset('/assets/img/core-img/favicon.ico')}}">
