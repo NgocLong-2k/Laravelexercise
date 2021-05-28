@@ -16,6 +16,7 @@ class DepartmentSeeder extends Seeder
     public function run()
     {
         DB::table('departments')->truncate();
+        DB::table('users')->truncate();
         Department::factory()
             ->count(5)
             ->hasUsers(20)

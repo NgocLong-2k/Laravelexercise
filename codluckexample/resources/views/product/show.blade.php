@@ -61,9 +61,11 @@
                     <!-- Product Meta Data -->
                     <div class="product-meta-data">
                         <div class="line"></div>
-                        <p class="product-price">$180</p>
+                        @foreach($products as $product)
+                            @if($id==$product->id)
+                        <p class="product-price">${{$product->price}}</p>
                         <a href="product-details.html">
-                            <h6>White Modern Chair</h6>
+                            <h6>{{$product->title}}</h6>
                         </a>
                         <!-- Ratings & Review -->
                         <div class="ratings-review mb-15 d-flex align-items-center justify-content-between">
@@ -83,9 +85,10 @@
                     </div>
 
                     <div class="short_overview my-5">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid quae eveniet culpa officia quidem mollitia impedit iste asperiores nisi reprehenderit consequatur, autem, nostrum pariatur enim?</p>
+                        <p>{{$product->slug}}</p>
                     </div>
-
+                    @endif
+                @endforeach
                     <!-- Add to Cart Form -->
                     <form class="cart clearfix" method="post">
                         <div class="cart-btn d-flex mb-50">

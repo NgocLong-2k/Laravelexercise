@@ -14,7 +14,9 @@ class ProductController extends Controller
         return view('product.index', compact('categories', 'products', 'id'));
     }
     public function show(Request $request,$id){
-        return view('product.show');
+        $categories = Category::select(['id', 'name'])->get();
+        $products = Product::select()->where('category_id', $id)->paginate();
+        return view('product.show',compact('categories', 'products', 'id'));
     }
 
 }

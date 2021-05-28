@@ -16,6 +16,7 @@ class SupplierSeeder extends Seeder
     public function run()
     {
         DB::table('suppliers')->truncate();
+        DB::table('receipts')->truncate();
         Supplier::factory()
             ->count(30)
             ->hasReceipts(3)

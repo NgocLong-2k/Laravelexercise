@@ -16,6 +16,7 @@ class CustomerSeeder extends Seeder
     public function run()
     {
         DB::table('customers')->truncate();
+        DB::table('delivery_notes')->truncate();
         Customer::factory()
             ->count(50)
             ->hasDeliveryNotes(3)

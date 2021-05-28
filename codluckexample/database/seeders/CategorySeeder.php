@@ -15,6 +15,7 @@ class CategorySeeder extends Seeder
     public function run()
     {
         DB::table('categories')->truncate();
+        DB::table('products')->truncate();
         Category::factory()
             ->count(12)
             ->hasProducts(10)
