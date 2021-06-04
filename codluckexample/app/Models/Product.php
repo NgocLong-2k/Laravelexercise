@@ -26,28 +26,28 @@ class Product extends Model
         'user_id',
     ];
     /**
-     * Get the category for the product.
+     * Get the category for the products.
      */
     public function category()
     {
         return $this->belongsTo(Category::class);
     }
     /**
-     * Get the User for the product.
+     * Get the User for the products.
      */
     public function user()
     {
         return $this->belongsTo(User::class);
     }
     /**
-     * Get the receipt detail for the product.
+     * Get the receipt detail for the products.
      */
     public function receiptDetails()
     {
         return $this->hasMany(ReceiptDetail::class);
     }
     /**
-     * Get the delivery note detail for the product.
+     * Get the delivery note detail for the products.
      */
     public function deliveryNoteDetails()
     {

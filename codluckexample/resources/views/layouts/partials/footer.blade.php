@@ -28,10 +28,10 @@
                                         <a class="nav-link" href="{{route('home')}}">Home</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="{{route('product.index', [1])}}">Shop</a>
+                                        <a class="nav-link" href="{{route('products.index', [1])}}">Shop</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="{{route('product.show', [1])}}">Product</a>
+                                        <a class="nav-link" href="{{route('products.show', [1])}}">Product</a>
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link" href="{{route('shopping.cart')}}">Cart</a>

@@ -9,7 +9,7 @@
         <div class="catagories-menu">
             <ul>
                 @foreach($categories as $category)
-                    <li @if($id == $category->id) class="active" @endif><a href="{{route('product.index', $category->id)}}">{{$category->name}}</a></li>
+                    <li @if($id == $category->id) class="active" @endif><a href="{{route('products.index', $category->id)}}">{{$category->name}}</a></li>
                 @endforeach
             </ul>
         </div>

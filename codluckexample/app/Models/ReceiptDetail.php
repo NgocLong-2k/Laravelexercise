@@ -34,7 +34,7 @@ class ReceiptDetail extends Model
         return $this->belongsTo(Receipt::class);
     }
     /**
-     * Get the product for the receipt detail.
+     * Get the products for the receipt detail.
      */
     public function product()
     {

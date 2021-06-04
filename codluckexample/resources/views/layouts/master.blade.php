@@ -72,5 +72,6 @@
     </section>
     <!-- ##### Newsletter Area End ##### -->
     @include('layouts.partials.footer')
+    @yield('js')
 </body>
 </html>

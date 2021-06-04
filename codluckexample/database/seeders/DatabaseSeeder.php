@@ -22,7 +22,7 @@ class DatabaseSeeder extends Seeder
             CategorySeeder::class,
             ReceiptDetailSeeder::class,
             DeliveryNoteDetailSeeder::class,
-
+            ProductSeeder::class,
         ]);
     }
 }

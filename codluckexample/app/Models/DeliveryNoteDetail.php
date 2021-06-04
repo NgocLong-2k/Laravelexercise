@@ -27,7 +27,7 @@ class DeliveryNoteDetail extends Model
         'tax',
     ];
     /**
-     * Get the User for the product.
+     * Get the User for the products.
      */
     public function product()
     {

@@ -24,8 +24,8 @@
     <nav class="amado-nav">
         <ul>
             <li><a href="{{route('home')}}">Home</a></li>
-            <li class="active"><a href="{{route('product.index', [1])}}">Shop</a></li>
-            <li><a href="{{route('product.show', [1])}}">Product</a></li>
+            <li class="active"><a href="{{route('products.index', [1])}}">Shop</a></li>
+            <li><a href="{{route('products.show', [1])}}">Product</a></li>
             <li><a href="{{route('shopping.cart')}}">Cart</a></li>
             <li><a href="{{route('contact.checkout')}}">Checkout</a></li>
         </ul>

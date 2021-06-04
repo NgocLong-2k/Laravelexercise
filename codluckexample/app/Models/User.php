@@ -56,7 +56,7 @@ class User extends Authenticatable
         return $this->belongsTo(Department::class);
     }
     /**
-     * Get the product for the user.
+     * Get the products for the user.
      */
     public function products()
     {

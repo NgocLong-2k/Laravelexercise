@@ -15,10 +15,37 @@ class CategorySeeder extends Seeder
     public function run()
     {
         DB::table('categories')->truncate();
-        DB::table('products')->truncate();
-        Category::factory()
-            ->count(12)
-            ->hasProducts(10)
-            ->create();
+        $categories = [
+            [
+                'name' => 'Chairs',
+                'parent_id' => 0,
+            ],
+            [
+                'name' => 'Beds',
+                'parent_id' => 0,
+            ],
+            [
+                'name' => 'Accesories',
+                'parent_id' => 0,
+            ],
+            [
+                'name' => 'Furniture',
+                'parent_id' => 0,
+            ],
+            [
+                'name' => 'Home Deco',
+                'parent_id' => 0,
+            ],
+            [
+                'name' => 'Dressings',
+                'parent_id' => 0,
+            ],
+            [
+                'name' => 'Tables',
+                'parent_id' => 0,
+            ],
+        ];
+
+        Category::insert($categories);
     }
 }

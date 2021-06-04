@@ -7,7 +7,7 @@
         @foreach($categories as $category)
         <!-- Single Catagory -->
         <div class="single-products-catagory clearfix">
-            <a href="{{route('product.index',[$category->id])}}">
+            <a href="{{route('products.index',[$category->id])}}">
                 <img src="{{asset('/assets/img/bg-img/1.jpg')}}" alt="">
                 <!-- Hover Content -->
                 <div class="hover-content">
