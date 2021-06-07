@@ -70,8 +70,8 @@
         <nav class="amado-nav">
             <ul>
                 <li class="active"><a href="{{route('home')}}">Home</a></li>
-                <li><a href="{{route('products.index',[1])}}">Shop</a></li>
-                <li><a href="{{route('products.show', [1])}}">Product</a></li>
+                <li><a href="{{route('product.index',[1])}}">Shop</a></li>
+                <li><a href="{{route('product.show', [1])}}">Product</a></li>
                 <li><a href="{{route('shopping.cart')}}">Cart</a></li>
                 <li><a href="{{route('contact.checkout')}}">Checkout</a></li>
             </ul>
@@ -155,10 +155,10 @@
                                         <a class="nav-link" href="{{route('home')}}">Home</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="{{route('products.index', [1])}}">Shop</a>
+                                        <a class="nav-link" href="{{route('product.index', [1])}}">Shop</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="{{route('products.show', [1])}}">Product</a>
+                                        <a class="nav-link" href="{{route('product.show', [1])}}">Product</a>
                                     </li>
                                     <li class="nav-item">
                                         <a class="nav-link" href="{{route('shopping.cart')}}">Cart</a>
