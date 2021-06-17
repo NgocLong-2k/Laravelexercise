@@ -15,6 +15,18 @@
         </div>
     </div>
     <div class="table-responsive">
+        @if ($errors->any())
+            <div class="alert alert-danger" role="alert">
+                <p>{{session()->get('errors')->first()}}</p>
+            </div>
+        @endif
+
+        @if (session()->get('success'))
+            <div class="alert alert-success" role="alert">
+                <p>{{session()->get('success')}}</p>
+            </div>
+        @endif
+
         <table class="table">
             <caption>List of products</caption>
             <thead>
@@ -45,9 +57,9 @@
                             </button>
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="{{route('admin.products.edit',$product->id)}}">Edit</a></li>
-                                <li><a class="dropdown-item" href="#">Preview</a></li>
+                                <li><a class="dropdown-item" href="{{route('admin.products.show', $product->id)}}">Preview</a></li>
                                 <li><a class="dropdown-item" href="#">Publish</a></li>
-                                <li><a class="dropdown-item" href="#">Delete</a></li>
+                                <li><a class="dropdown-item delete" attr_id="{{$product->id}}" href="#">Delete</a></li>
                             </ul>
                         </div>
                     </td>
@@ -63,4 +75,40 @@
             {{$products->links('vendor.pagination.bootstrap-4')}}
         </div>
     </div>
+@stop
+@section('modal')
+    <div class="modal fade" id="deleleItem" aria-hidden="true" aria-labelledby="deleleItemToggleLabel" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <form action="{{route('admin.products.delete')}}" method="post">
+                    @csrf
+                    @method('DELETE')
+                    <input type="hidden" id="del_id" name="item" value="0" />
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="deleleItemToggleLabel">Product Delete</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        Are you sure to want to deleted this product!
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-danger" >Delete</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+@stop
+
+@section('js')
+    <script type="text/javascript">
+        var myModal = new bootstrap.Modal(document.getElementById('deleleItem'), {
+            keyboard: false
+        })
+        $('.delete').click(function(){
+            $id = $(this).attr('attr_id');
+            $('#del_id').val($id);
+            myModal.show();
+        });
+    </script>
 @stop

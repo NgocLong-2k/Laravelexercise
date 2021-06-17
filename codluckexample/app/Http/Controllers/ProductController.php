@@ -42,7 +42,7 @@ class ProductController extends Controller
         }
         $products = $products->where('category_id', $id)->paginate($perPage)->withQueryString();
 
-        return view('products.index', compact('categories', 'products', 'id'));
+        return view('product.index', compact('categories', 'products', 'id'));
     }
     public function show(Request $request,$id){
         $product = Product::find($id,
@@ -60,7 +60,7 @@ class ProductController extends Controller
 
         if ($product)
         {
-            return view('products.show', compact('product'));
+            return view('product.show', compact('product'));
         }
 
         return abort(404);
