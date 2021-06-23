@@ -12,7 +12,10 @@ Route::get('registration', [RegistrationController::class, 'registration'])->nam
 
 Route::middleware(['auth', 'hasRole'])->prefix('admin')->name('admin.')->group(function () {
     Route::prefix('products')->name('products.')->group(function(){
-        Route::get('create', [ProductController::class, 'create'])->name('create');
+        Route::get('create', [
+            'uses'=>'ProductController@create',
+            'inRoles' => ['admin', 'editor'],
+        ])->name('create');
         Route::post('create', [ProductController::class, 'store'])->name('store');
         Route::get('/', [
             'uses' => 'ProductController@index',
@@ -21,7 +24,7 @@ Route::middleware(['auth', 'hasRole'])->prefix('admin')->name('admin.')->group(f
 
         Route::get('/{id}/edit', [
             'uses' => 'ProductController@edit',
-            'inRoles' => []
+            'inRoles' => ['admin', 'editor']
         ])->name('edit');
 
         Route::put('/{id}/edit', [ProductController::class, 'update'])->name('update');
