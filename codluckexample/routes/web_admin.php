@@ -33,4 +33,15 @@ Route::middleware(['auth', 'hasRole'])->prefix('admin')->name('admin.')->group(f
             'inRoles' => 'admin',
         ])->name('delete');
     });
+    Route::prefix('categories')->name('category.')->group(function(){
+        Route::delete('/delete', [
+            'uses' => 'CategoryController@destroy',
+            'inRoles' => ['admin', 'editor', 'report'],
+        ])->name('delete');
+
+        Route::get('/', [
+            'uses' => 'CategoryController@index',
+            'inRoles' => ['admin', 'editor', 'report'],
+        ])->name('index');
+    });
 });
